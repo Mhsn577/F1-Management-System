@@ -102,6 +102,6 @@ To start completely fresh, delete all three files.
 
 - S M Mohsin Abbas Rizvi
 - Yumna Irfan
-- Yusra Farooqi
+- Yusra Farooqui
 
 Course: Programming Fundamentals (CCP)
