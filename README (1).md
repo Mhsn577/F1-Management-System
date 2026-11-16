@@ -77,6 +77,151 @@ A Full Weekend Pass is treated as a single package and cannot be partially cance
   - `booking_id.txt` (Text: `"r"` / `"w"`): Tracks the last issued booking ID across runs.
 
 
-│   └── output3.png
-├── Project_Report.pdf
-└── README.md
+## Sample Input and Output
+
+### 1. Booking a Single-Day Ticket (with Age Discounts)
+**User Input:**
+```text
+Main Menu Choice: 1
+Day Choice: 3 (Sunday)
+Enclosure Choice: 2 (Grandstand)
+Number of Tickets: 2
+Ticket Type: N
+Primary Customer Name: Ali Raza
+Age for Person 1: 28
+Age for Person 2: 12
+```
+
+**Program Output:**
+```text
++----------------------------------------------------+
+|                 COMBINED BILL SLIP                 |
++----------------------------------------------------+
+| BOOKING ID      : 1001                             |
+| PRIMARY ACCOUNT : Ali Raza                         |
+| TICKET CATEGORY : N (Normal)                       |
+| TOTAL QUANTITY  : 2                                |
+| BASE UNIT PRICE : 275.00                           |
+| SUBTOTAL COST   : 550.00                           |
+| TOTAL SAVINGS   : -137.50                          |
++----------------------------------------------------+
+| GRAND TOTAL     : 412.50                           |
++----------------------------------------------------+
+      == WELCOME TO RACE WEEKEND ==
+
+Bill processing finished! Record successfully logged to file.
+```
+
+---
+
+### 2. Booking a Full Weekend Pass
+**User Input:**
+```text
+Main Menu Choice: 1
+Day Choice: 4 (Full Weekend Pass)
+Friday Enclosure: 1 (General Admission)
+Saturday Enclosure: 3 (Premium)
+Sunday Enclosure: 4 (VIP)
+Friday Tickets: 1
+Saturday Tickets: 1
+Sunday Tickets: 1
+Ticket Type: V
+Primary Customer Name: Sara Ahmed
+Age for Person 1: 65
+Age for Person 2: 30
+Age for Person 3: 4
+```
+
+**Program Output:**
+```text
++----------------------------------------------------+
+|                 COMBINED BILL SLIP                 |
++----------------------------------------------------+
+| BOOKING ID      : 1002                             |
+| PRIMARY ACCOUNT : Sara Ahmed                       |
+| TICKET CATEGORY : V (VIP)                          |
+| TOTAL QUANTITY  : 3                                |
+| BASE UNIT PRICE : 956.00                           |
+| SUBTOTAL COST   : 2868.00                          |
+| TOTAL SAVINGS   : -1242.80                         |
++----------------------------------------------------+
+| GRAND TOTAL     : 1625.20                          |
++----------------------------------------------------+
+      == WELCOME TO RACE WEEKEND ==
+
+Bill processing finished! Record successfully logged to file.
+```
+
+---
+
+### 3. Searching for a Booking by ID
+**User Input:**
+```text
+Main Menu Choice: 3
+Enter Booking ID: 1001
+```
+
+**Program Output:**
+```text
+Booking found!
++----------------------------------------------------+
+| BOOKING ID      : 1001                             |
+| NAME            : Ali Raza                         |
+| TICKETS         : 2                                |
+| Sunday          : 2 ticket(s) - Grandstand         |
++----------------------------------------------------+
+```
+
+---
+
+### 4. Sorting Customers Alphabetically
+**User Input:**
+```text
+Main Menu Choice: 4
+```
+
+**Program Output:**
+```text
++----------------------------------------------------+
+|              CUSTOMERS SORTED BY NAME              |
++----------------------------------------------------+
+| BOOKING ID | NAME                        | TICKETS |
++----------------------------------------------------+
+| 1001       | Ali Raza                    | 2       |
+| 1002       | Sara Ahmed                  | 3       |
++----------------------------------------------------+
+```
+
+---
+
+### 5. Cancelling a Booking
+**User Input:**
+```text
+Main Menu Choice: 2
+Enter Booking ID: 1001
+Confirm Cancellation (Y/N): Y
+Register for another day now? (Y/N): N
+```
+
+**Program Output:**
+```text
+This is a single day booking.
+
+  > Do you really want to cancel booking 1001 (Ali Raza)? (Y/N): Y
+
+Booking 1001 cancelled. Seats have been released.
+```
+
+---
+
+### 6. Invalid Input Handling
+**User Input:**
+```text
+Main Menu Choice: abc
+```
+
+**Program Output:**
+```text
+  > Enter your choice: abc
+  Invalid input! Please enter a valid number.
+```
